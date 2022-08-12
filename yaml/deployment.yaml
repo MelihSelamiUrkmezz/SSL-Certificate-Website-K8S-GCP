@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webappdeployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: webappcontainer
+        image: melihselamiurkmez/worldweb:1.3
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "125m"
+        ports:
+        - containerPort: 80
