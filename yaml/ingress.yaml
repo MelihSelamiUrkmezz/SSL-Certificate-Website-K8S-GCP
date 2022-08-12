@@ -5,6 +5,7 @@ metadata:
 spec:
   tls:
   - secretName: firstsecret
+  hosts: dtcloudintern.com
   defaultBackend:
     service:
       name: "webappservice"
